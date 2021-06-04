@@ -1,0 +1,39 @@
+{
+  "name": "like-ios-clock",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./src",
+    "build-macOS": "npx electron-builder --mac --x64 --dir",
+    "build-windows": "npx electron-builder --win --x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "cc.isso.like-ios-clock",
+    "productName": "Like iOS Clock",
+    "files": [
+      "src/"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "src/icon.png"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^13.1.0",
+    "electron-builder": "^22.10.5",
+    "electron-packager": "^15.2.0"
+  },
+  "description": ""
+}

@@ -1,0 +1,177 @@
+@font-face {
+	font-family: 'SF-Compact-Display-Light';
+	src: url(./fonts/SF-Compact-Display-Ultralight.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    user-select: none;
+}
+
+header, footer {
+    height: 64px;
+    background-color: #121213;
+}
+
+/* header {} */
+
+.title {
+    text-align: center;
+    font-size: 16px;
+    line-height: 64px;
+}
+
+main {
+    height: calc(100vh - 128px);
+    overflow: scroll;
+}
+
+/* footer {} */
+
+.switchButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.switchButton {
+    width: calc(100% / 3);
+    text-align: center;
+    color: #7d7e7e;
+    padding: 4px 0;
+}
+
+.selected p {
+    color: #f1a33c;
+}
+
+.switchButton p {
+    font-size: 12px;
+}
+
+.switchButton svg {
+    height: 32px;
+    fill: #7d7e7e;
+}
+
+.selected svg {
+    fill: #f1a33c;
+}
+
+
+
+/* universalClock */
+.universalClock {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.universalClock h2 {
+    font-size: 32px;
+    padding: 4px;
+}
+
+.clock {
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #333 solid 1px;
+}
+
+.clock:first-child {
+    border-top: #333 solid 1px;
+}
+
+.dif {
+    font-size: 16px;
+    color: #666;
+}
+
+.place {
+    font-size: 32px;
+}
+
+.time {
+    font-size: 64px;
+    font-family: 'SF-Compact-Display-Light';
+}
+
+
+
+/* stopWatch */
+/* .stopWatch{
+} */
+
+.stopWatchDisplay {
+    padding-bottom: 5vh;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: normal;
+}
+
+.controllers {
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-btn,
+.left-btn {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+}
+
+.start {
+    background-color: #132914;
+    color: #67ce67;
+}
+
+.stop {
+    background-color: #2f100d;
+    color: #eb5545;
+}
+
+.rap,
+.reset {
+    background-color: #333;
+    color: #fefefe;
+}
+
+.rap:disabled {
+    background-color: #1c1c1e;
+    color: #919197;
+}
+
+.raps {
+    margin: 0 auto;
+    margin-top: 16px;
+    max-width: 640px;
+}
+
+.rap-detail {
+    border-bottom: #333 solid 1px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rap-detail:first-child {
+    border-top: #333 solid 1px;
+}
