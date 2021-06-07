@@ -17,6 +17,7 @@
     <script src="./js/universalClock.js"></script>
     <script src="./js/stopWatch.js"></script>
     <script src="./js/switch.js"></script>
+    <script src="./js/timer.js"></script>
 
     <script src="./js/onload.js"></script>
 </head>
@@ -92,10 +93,10 @@
         <div class="stopWatch" style="display: none;">
             <div class="stopWatchDisplay">00:00.00</div>
             <div class="controllers">
-                <button class="rap left-btn" onclick="rapTimer()" disabled>ラップ</button>
-                <button class="reset left-btn" style="display:none" onclick="resetTimer()">リセット</button>
-                <button class="start right-btn" onclick="startTimer()">開始</button>
-                <button class="stop right-btn" style="display:none" onclick="stopTimer()">停止</button>
+                <button class="rap left-btn" onclick="rapStopWatch()" disabled>ラップ</button>
+                <button class="reset left-btn" style="display:none" onclick="resetStopWatch()">リセット</button>
+                <button class="start right-btn" onclick="startStopWatch()">開始</button>
+                <button class="stop right-btn" style="display:none" onclick="stopStopWatch()">停止</button>
             </div>
             <div class="raps">
                 <div class="rap-detail">
@@ -107,6 +108,40 @@
 
 
         <div class="timer" style="display: none;">
+            <div class="timePicker">
+                <div class="upControllers">
+                    <div class="hour-up-btn up-btn" onclick="upHour()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#fff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M58.86,60.57a8.34,8.34,0,0,1-6.5,2.52H8.77a8.31,8.31,0,0,1-6.49-2.52A8.14,8.14,0,0,1,0,55a8.58,8.58,0,0,1,.51-2.88A33.28,33.28,0,0,1,2,48.62L22,6.28A12.42,12.42,0,0,1,25.56,1.7a8.23,8.23,0,0,1,10,0,12.42,12.42,0,0,1,3.53,4.58L59.19,48.62c.62,1.35,1.1,2.51,1.44,3.47A8.58,8.58,0,0,1,61.14,55,8.14,8.14,0,0,1,58.86,60.57Z"/></g></g></svg></div>
+                    <div class="min-up-btn up-btn" onclick="upMin()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#fff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M58.86,60.57a8.34,8.34,0,0,1-6.5,2.52H8.77a8.31,8.31,0,0,1-6.49-2.52A8.14,8.14,0,0,1,0,55a8.58,8.58,0,0,1,.51-2.88A33.28,33.28,0,0,1,2,48.62L22,6.28A12.42,12.42,0,0,1,25.56,1.7a8.23,8.23,0,0,1,10,0,12.42,12.42,0,0,1,3.53,4.58L59.19,48.62c.62,1.35,1.1,2.51,1.44,3.47A8.58,8.58,0,0,1,61.14,55,8.14,8.14,0,0,1,58.86,60.57Z"/></g></g></svg></div>
+                    <div class="sec-up-btn up-btn" onclick="upSec()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#fff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M58.86,60.57a8.34,8.34,0,0,1-6.5,2.52H8.77a8.31,8.31,0,0,1-6.49-2.52A8.14,8.14,0,0,1,0,55a8.58,8.58,0,0,1,.51-2.88A33.28,33.28,0,0,1,2,48.62L22,6.28A12.42,12.42,0,0,1,25.56,1.7a8.23,8.23,0,0,1,10,0,12.42,12.42,0,0,1,3.53,4.58L59.19,48.62c.62,1.35,1.1,2.51,1.44,3.47A8.58,8.58,0,0,1,61.14,55,8.14,8.14,0,0,1,58.86,60.57Z"/></g></g></svg></div>
+                </div>
+                <div class="pickerDisplay">
+                    <div class="pickHour pickTime">
+                        <div class="pickNumber pickNumberHour">00</div>
+                        <div>時間</div>
+                    </div>
+                    <div class="pickMin pickTime">
+                        <div class="pickNumber pickNumberMin">00</div>
+                        <div>分</div>
+                    </div>
+                    <div class="pickSec pickTime">
+                        <div class="pickNumber pickNumberSec">01</div>
+                        <div>秒　</div>
+                    </div>
+                </div>
+                <div class="downControllers">
+                    <div class="hour-down-btn down-btn" onclick="downHour()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M2.28,2.52A8.3,8.3,0,0,1,8.77,0H52.36a8.3,8.3,0,0,1,6.49,2.52,8.08,8.08,0,0,1,2.29,5.59A8.68,8.68,0,0,1,60.63,11a36.67,36.67,0,0,1-1.48,3.47l-20,42.34a12.51,12.51,0,0,1-3.53,4.58,8.23,8.23,0,0,1-10,0A12.51,12.51,0,0,1,22,56.81L2,14.47C1.33,13.11.85,12,.51,11A8.68,8.68,0,0,1,0,8.11,8.12,8.12,0,0,1,2.28,2.52Z"/></g></g></svg></div>
+                    <div class="min-down-btn down-btn" onclick="downMin()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M2.28,2.52A8.3,8.3,0,0,1,8.77,0H52.36a8.3,8.3,0,0,1,6.49,2.52,8.08,8.08,0,0,1,2.29,5.59A8.68,8.68,0,0,1,60.63,11a36.67,36.67,0,0,1-1.48,3.47l-20,42.34a12.51,12.51,0,0,1-3.53,4.58,8.23,8.23,0,0,1-10,0A12.51,12.51,0,0,1,22,56.81L2,14.47C1.33,13.11.85,12,.51,11A8.68,8.68,0,0,1,0,8.11,8.12,8.12,0,0,1,2.28,2.52Z"/></g></g></svg></div>
+                    <div class="sec-down-btn down-btn" onclick="downSec()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.14 63.09"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g  data-name="レイヤー 2"><g  data-name="レイヤー 1"><path class="cls-1" d="M2.28,2.52A8.3,8.3,0,0,1,8.77,0H52.36a8.3,8.3,0,0,1,6.49,2.52,8.08,8.08,0,0,1,2.29,5.59A8.68,8.68,0,0,1,60.63,11a36.67,36.67,0,0,1-1.48,3.47l-20,42.34a12.51,12.51,0,0,1-3.53,4.58,8.23,8.23,0,0,1-10,0A12.51,12.51,0,0,1,22,56.81L2,14.47C1.33,13.11.85,12,.51,11A8.68,8.68,0,0,1,0,8.11,8.12,8.12,0,0,1,2.28,2.52Z"/></g></g></svg></div>
+                </div>
+                <div class="controllers timerControllers">
+                    <button class="cancel left-btn" onclick="cancelTimer()" disabled>キャンセル</button>
+                    <button class="start timer-start right-btn" onclick="startTimer()">開始</button>
+                    <button class="pause right-btn" style="display:none" onclick="stopTimer()">一時停止</button>
+                </div>
+            </div>
+            <div class="timerMain" style="display: none;">
+                
+            </div>
         </div>
 
 

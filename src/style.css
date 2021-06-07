@@ -142,6 +142,10 @@ main {
     color: #67ce67;
 }
 
+.start:disabled {
+    background-color: #08150a;
+}
+
 .stop {
     background-color: #2f100d;
     color: #eb5545;
@@ -174,4 +178,93 @@ main {
 
 .rap-detail:first-child {
     border-top: #333 solid 1px;
+}
+
+
+/* timer */
+/* .timer {
+} */
+
+.timePicker {
+    padding-bottom: 5vh;
+    height: 40vh;
+}
+
+.pickerDisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upControllers,
+.downControllers {
+    display: flex;
+    justify-content: space-around;
+}
+
+.up-btn,
+.down-btn {
+    width: calc(100% / 3);
+    text-align: center;
+}
+
+.up-btn svg,
+.down-btn svg {
+    width: 24px;
+}
+
+.up-btn svg {
+    margin-bottom: 8px;
+}
+
+.down-btn svg {
+    margin-top: 16px;
+}
+
+.upControllers div:nth-child(1) svg,
+.downControllers div:nth-child(1) svg {
+    padding-right: 26px;
+}
+
+.upControllers div:nth-child(2) svg,
+.downControllers div:nth-child(2) svg {
+    padding-right: 16px;
+}
+
+.upControllers div:nth-child(3) svg,
+.downControllers div:nth-child(3) svg {
+    padding-right: 36px;
+}
+
+.pickTime {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: top; */
+}
+
+.pickTime div:last-child {
+    line-height: 72px;
+}
+
+.pickNumber {
+    font-size: 48px;
+}
+
+.timerControllers {
+    margin-top: 36px;
+}
+
+.cancel {
+    background-color: #333;
+    color: #fefefe;
+}
+
+.cancel:disabled {
+    background-color: #1c1c1e;
+    color: #919197;
+}
+
+.pause {
+    background-color: #302107;
+    color: #f1a33c;
 }

@@ -54,7 +54,7 @@ function countStopWatch() {
     }
 }
 
-function startTimer() {
+function startStopWatch() {
     statsStopWatch = true;
     $(".start").css('display', 'none');
     $(".stop").css('display', 'block');
@@ -63,7 +63,7 @@ function startTimer() {
     $(".reset").css('display', 'none');
 }
 
-function stopTimer() {
+function stopStopWatch() {
     statsStopWatch = false;
     $(".start").css('display', 'block');
     $(".stop").css('display', 'none');
@@ -71,7 +71,7 @@ function stopTimer() {
     $(".reset").css('display', 'block');
 }
 
-function resetTimer() {
+function resetStopWatch() {
     stopWatchTime = 0;
     rapTime = 0;
 
@@ -83,7 +83,7 @@ function resetTimer() {
     $(".reset").css('display', 'none');
 }
 
-function rapTimer() {
+function rapStopWatch() {
     rapTime = 0;
     $(".raps").prepend('<div class="rap-detail"><div>ラップ'+ ($(".rap-detail").length + 1) +'</div><div>00:00.00</div></div>');
 }
