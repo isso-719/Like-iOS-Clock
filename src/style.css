@@ -182,8 +182,9 @@ main {
 
 
 /* timer */
-/* .timer {
-} */
+.timer {
+    padding-top: 128px;
+}
 
 .timePicker {
     padding-bottom: 5vh;
@@ -268,3 +269,17 @@ main {
     background-color: #302107;
     color: #f1a33c;
 }
+
+/* #pieTimer {
+    width: 10px;
+} */
+
+.textTimer {
+    display: flex;
+    justify-content: center;
+}
+
+.textTimer div {
+    display: flex;
+}
+

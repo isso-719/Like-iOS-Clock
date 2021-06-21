@@ -17,6 +17,7 @@
     <script src="./js/universalClock.js"></script>
     <script src="./js/stopWatch.js"></script>
     <script src="./js/switch.js"></script>
+    <script src="./js/jquery.pietimer.js"></script>
     <script src="./js/timer.js"></script>
 
     <script src="./js/onload.js"></script>
@@ -136,11 +137,17 @@
                 <div class="controllers timerControllers">
                     <button class="cancel left-btn" onclick="cancelTimer()" disabled>キャンセル</button>
                     <button class="start timer-start right-btn" onclick="startTimer()">開始</button>
-                    <button class="pause right-btn" style="display:none" onclick="stopTimer()">一時停止</button>
+                    <!-- <button class="pause right-btn" style="display:none" onclick="stopTimer()">一時停止</button> -->
                 </div>
             </div>
             <div class="timerMain" style="display: none;">
-                
+                <!-- <div id="pieTimer"></div> -->
+                <div class="textTimer"></div>
+                <div class="controllers timerControllers">
+                    <button class="cancel left-btn" onclick="cancelTimer()">キャンセル</button>
+                    <button class="pause timer-pause right-btn" onclick="pauseTimer()">一時停止</button>
+                    <button class="start timer-start right-btn" style="display:none" onclick="reStartTimer()">再開</button>
+                </div>
             </div>
         </div>
 

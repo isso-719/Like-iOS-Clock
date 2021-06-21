@@ -4,5 +4,5 @@ window.onload = function () {
 
     setInterval('countStopWatch()',10);
 
-    setInterval('countTimer()',1000);
+    setInterval('countTimer()',10);
 }
