@@ -105,6 +105,8 @@ function endOfTimer() {
     timer_endOfTime = 0;
     $(".timePicker").css('display', 'block');
     $(".timerMain").css('display', 'none');
+    $(".pause").css('display', 'block');
+    $(".timerMain .timerControllers .start").css('display', 'none');
     pickDisplay();
 }
 
@@ -117,6 +119,8 @@ function cancelTimer() {
     timer_endOfTime = 0;
     $(".timePicker").css('display', 'block');
     $(".timerMain").css('display', 'none');
+    $(".pause").css('display', 'block');
+    $(".timerMain .timerControllers .start").css('display', 'none');
     pickDisplay();
 }
 
